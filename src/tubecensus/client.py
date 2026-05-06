@@ -2,7 +2,6 @@ import os
 import pandas as pd
 from huggingface_hub import snapshot_download
 from tqdm import tqdm
-import matplotlib.pyplot as plt
 
 from tubecensus.sampler import sample_one, sample_many
 from tubecensus.fetcher import YTStore, pad_ts, ts_to_epoch
