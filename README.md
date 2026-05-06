@@ -2,12 +2,17 @@
 
 A Python library for sampling YouTube channels and retrieving their historical Wayback Machine metadata.
 
-## Installation
+## Setup
 * Requirements: ~20GB of storage. 
     * Defaults to `~/.tubecensus`, but can be overriden by `TubeCensus(data_dir=...)`, or the `TUBECENSUS_DIR` environment variable.
-
-* ` pip install tubecensus`
-
+* `pip install tubecensus`
+* Example:
+```
+from tubecensus import TubeCensus
+tc = TubeCensus()                                        # client configuration goes here
+sample = tc.sample(10, by='usernames')                   # sample 10 channels by their username field
+subs = tc.fetch(sample, from_ts='2019', to_ts='2021')    # retrieve the subs of those 10 when present from 2019-2021.
+```
 ## Features
 
 ### sample(n, by={"usernames","ids","customs", "handles"})
